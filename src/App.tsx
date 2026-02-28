@@ -7,7 +7,7 @@ import { Login } from "./Components/Login/Login";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center text-center h-screen">
+    <div className="flex flex-col justify-center text-center">
       <BrowserRouter>
         <Headers />
         <Routes>
