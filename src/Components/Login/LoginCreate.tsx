@@ -25,9 +25,15 @@ export const LoginCreate = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
+  const enviarLocal = (e) => {
+    e.preventDefault();
+    localStorage.setItem("@MeuApp", formData.nome);
+    console.log(formData);
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={enviarLocal}>
         <div>
           {formFields.map((fields) => (
             <div key={fields.id}>

@@ -34,7 +34,7 @@ export const Home = () => {
       navigate("/login");
     } else {
       console.log("usuario não encontrado ou incorreto.");
-      navigate("/criar");
+      navigate("/login/criar");
     }
   };
 
