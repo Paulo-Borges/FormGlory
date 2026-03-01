@@ -5,7 +5,7 @@ export const Headers = () => {
     <div className="p-8">
       <nav className="flex justify-between">
         <Link to="/">Home</Link>
-        <Link to="/login">Login / Criar</Link>
+        <Link to="/criar">Login / Criar</Link>
       </nav>
     </div>
   );

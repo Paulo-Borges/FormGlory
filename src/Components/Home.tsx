@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const formFields = [
   {
@@ -20,13 +21,28 @@ export const Home = () => {
     nome: "",
     email: "",
   });
+  const navigate = useNavigate();
 
+  // se estiver salvo envia para os lugares certo
+  const handleLogin = () => {
+    const emailSalvo = localStorage.getItem("@MeuApp:dados");
+
+    if (emailSalvo) {
+      navigate("/login");
+    } else {
+      navigate("/criar");
+    }
+  };
+
+  // pra pegar o que e digitado
   function pegarForm(e) {
     setData({ ...data, [e.target.name]: e.target.value });
   }
 
+  // pra enviar pro localStorage
   function enviarForm(e) {
     e.preventDefault();
+
     console.log(data);
   }
 
@@ -44,17 +60,9 @@ export const Home = () => {
             />
           </div>
         ))}
-
-        {/* <div>
-          <label htmlFor="">Email:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Digite o email cadastrado"
-            onChange={pegarForm}
-          />
-        </div> */}
-        <button type="submit">Entrar / Criar</button>
+        <button type="submit" onClick={handleLogin}>
+          Entrar / Criar
+        </button>
       </form>
     </div>
   );
