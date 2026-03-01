@@ -25,15 +25,15 @@ export const Home = () => {
 
   // se estiver salvo envia para os lugares certo
   const handleLogin = () => {
-    // 1. Busca o email que foi salvo anteriormente no localStorage
+    // 1. Busca o usuario que foi salvo anteriormente no localStorage
     const usuarioCadastrado = localStorage.getItem("@MeuApp");
 
-    // 2. Compara o email digitado AGORA com o email do LocalStorage
+    // 2. Compara o usuario digitado AGORA com o email do LocalStorage
     if (data.nome === usuarioCadastrado) {
       console.log("Usuário reconhecido!");
       navigate("/login");
     } else {
-      console.log("Email não encontrado ou incorreto.");
+      console.log("usuario não encontrado ou incorreto.");
       navigate("/criar");
     }
   };
@@ -46,7 +46,7 @@ export const Home = () => {
   // pra enviar pro localStorage
   function enviarForm(e) {
     e.preventDefault();
-
+    // localStorage.setItem("@MeuApp", JSON.stringify(data));
     console.log(data);
   }
 

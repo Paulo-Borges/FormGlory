@@ -79,7 +79,7 @@ const datasFields = [
   {
     label: "Profissão",
     type: "text",
-    name: "profissão",
+    name: "profissao",
     placeholder: "Digite o seu profissão",
   },
   {
