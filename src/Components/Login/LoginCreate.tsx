@@ -21,29 +21,27 @@ export const LoginCreate = () => {
     email: "",
   });
 
+  function pegarForm(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
   return (
     <div>
       <form>
         <div>
           {formFields.map((fields) => (
-            <div>
+            <div key={fields.id}>
               <label>{fields.label}:</label>
               <input
                 type={fields.type}
                 name={fields.id}
                 placeholder={fields.placeholder}
+                onChange={pegarForm}
               />
             </div>
           ))}
         </div>
-        {/* <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Digite o email pra cadastro!"
-          />
-        </div> */}
+
         <button type="submit">Entrar</button>
       </form>
     </div>
