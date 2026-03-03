@@ -7,7 +7,7 @@ import { Login } from "./Components/Login/Login";
 
 function App() {
   return (
-    <div className="flex flex-col mt-12 h-full border px-8 py-24 rounded-2xl">
+    <div className="flex flex-col mt-12 h-full border bg-white px-8 py-24 rounded-2xl">
       <BrowserRouter>
         <Headers />
         <Routes>

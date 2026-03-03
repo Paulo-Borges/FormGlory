@@ -36,11 +36,12 @@ export const LoginCreate = () => {
       <form onSubmit={enviarLocal}>
         <div>
           {formFields.map((fields) => (
-            <div key={fields.id} className="flex flex-col border">
+            <div key={fields.id} className="flex flex-col items-start gap-2">
               <label>{fields.label}:</label>
               <input
                 type={fields.type}
                 name={fields.id}
+                className="w-full bg-amber-50 p-3"
                 placeholder={fields.placeholder}
                 onChange={pegarForm}
               />
@@ -48,7 +49,12 @@ export const LoginCreate = () => {
           ))}
         </div>
 
-        <button type="submit">Entrar</button>
+        <button
+          type="submit"
+          className="mt-15 bg-amber-50 hover:bg-amber-100 p-2"
+        >
+          Entrar
+        </button>
       </form>
     </div>
   );
