@@ -54,17 +54,22 @@ export const Home = () => {
     <div>
       <form onSubmit={enviarForm}>
         {formFields.map((field) => (
-          <div key={field.id}>
+          <div key={field.id} className="flex flex-col items-start gap-2">
             <label htmlFor="">{field.label}:</label>
             <input
               type={field.type}
               name={field.id}
+              className="w-full bg-amber-50 p-3"
               placeholder={field.placeholder}
               onChange={pegarForm}
             />
           </div>
         ))}
-        <button type="submit" onClick={handleLogin}>
+        <button
+          type="submit"
+          onClick={handleLogin}
+          className="mt-15 bg-amber-50 hover:bg-amber-100 p-2"
+        >
           Entrar / Criar
         </button>
       </form>

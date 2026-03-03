@@ -12,12 +12,14 @@ export const Headers = () => {
     } else {
       setUsuario(null);
     }
-  }, [setUsuario]);
+  }, []);
 
   return (
-    <div className="p-8">
-      <nav className="flex justify-between">
-        <Link to="/">Home</Link>
+    <div className="mb-6 flex justify-between ">
+      <nav className="flex gap-20  items-center">
+        <Link to="/" className="bg-amber-50 hover:bg-amber-100 p-2">
+          Home
+        </Link>
         {usuario || <LoginForm /> ? (
           <span>Bem-vindo, {usuario}</span>
         ) : (

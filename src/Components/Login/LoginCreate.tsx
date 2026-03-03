@@ -36,7 +36,7 @@ export const LoginCreate = () => {
       <form onSubmit={enviarLocal}>
         <div>
           {formFields.map((fields) => (
-            <div key={fields.id}>
+            <div key={fields.id} className="flex flex-col border">
               <label>{fields.label}:</label>
               <input
                 type={fields.type}

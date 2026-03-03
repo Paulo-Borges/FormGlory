@@ -219,9 +219,17 @@ export const LoginForm = () => {
         </div>
         <br />
         <br />
-
-        <div className="flex justify-center">
-          <button type="submit">Enviar</button>
+        <div className="flex justify-between">
+          <div className="flex justify-center">
+            <button className="cursor-pointer" type="submit">
+              Guardar Dados
+            </button>
+          </div>
+          <div className="flex justify-center">
+            <button className="cursor-pointer" type="submit">
+              Emitir Carteira
+            </button>
+          </div>
         </div>
       </form>
     </div>
