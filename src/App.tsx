@@ -4,6 +4,7 @@ import { Footer } from "./Components/Footer";
 import { Headers } from "./Components/Headers";
 import { Home } from "./Components/Home";
 import { Login } from "./Components/Login/Login";
+import Users from "./app/Users";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Headers />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/app/Users" element={<Users />} />
           <Route path="/login/*" element={<Login />} />
         </Routes>
         <Footer />

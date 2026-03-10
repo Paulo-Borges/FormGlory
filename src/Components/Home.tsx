@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const formFields = [
   {
@@ -72,6 +72,7 @@ export const Home = () => {
         >
           Entrar / Criar
         </button>
+        <Link to="../app/Users">Usuários</Link>
       </form>
     </div>
   );
