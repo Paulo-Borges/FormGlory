@@ -23,6 +23,7 @@ export default function Users() {
     } catch (error) {
       // Criar mensagem de erro
       setError("Erro ao carregar os usuários");
+      console.log(error);
     }
   };
   //   Hook pra buscar os dados na primeira renderização
@@ -32,6 +33,9 @@ export default function Users() {
 
   return (
     <div>
+      <h1>Listar Usuários</h1>
+      {/* Exibe mensagem de erro  */}
+      {error && <p style={{ color: "#f00" }}>{error}</p>}
       <table>
         <thead>
           <tr>
