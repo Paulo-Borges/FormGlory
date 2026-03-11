@@ -32,7 +32,7 @@ export const LoginCreate = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 justify-center text-start min-w-2xl border border-amber-50">
+    <div className="flex flex-col gap-6 justify-center text-start min-w-2xl border border-amber-100">
       <form onSubmit={enviarLocal} className="mt-6">
         <div>
           {formFields.map((fields) => (
