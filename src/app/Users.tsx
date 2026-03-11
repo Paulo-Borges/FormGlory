@@ -32,28 +32,34 @@ export default function Users() {
   }, []);
 
   return (
-    <div>
-      <h1>Listar Usuários</h1>
+    <div className="w-screen">
+      <h1 className="pb-6 font-medium text-2xl">Listar Usuários</h1>
       {/* Exibe mensagem de erro  */}
       {error && <p style={{ color: "#f00" }}>{error}</p>}
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
+      <div className="mt-6 bg-white shadow-md rounded-lg p-6">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="bg-gray-200">
+              <th className="border border-gray-300 p-3 text-left">ID</th>
+              <th className="border border-gray-300 p-3 text-left">NOME</th>
+              <th className="border border-gray-300 p-3 text-left">EMAIL</th>
+              <th className="border border-gray-300  p-3 text-center">AÇÕES</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id} className="hover:bg-gray-100">
+                <td className="border border-gray-300 p-3">{user.id}</td>
+                <td className="border border-gray-300 p-3">{user.name}</td>
+                <td className="border border-gray-300 p-3">{user.email}</td>
+                <td className="border border-gray-300 p-3">
+                  Visualizar Editar Apagar
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

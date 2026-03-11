@@ -15,13 +15,16 @@ export const Headers = () => {
   }, []);
 
   return (
-    <div className="mb-6 flex justify-between ">
-      <nav className="flex gap-20  items-center">
-        <Link to="/" className="bg-amber-50 hover:bg-amber-100 p-2">
+    <div className="">
+      <nav className="flex justify-between px-8">
+        <Link
+          to="/"
+          className=" font-medium rounded bg-amber-50 hover:bg-amber-100 p-0 hover:p-1 "
+        >
           Home
         </Link>
         {usuario || <LoginForm /> ? (
-          <span>Bem-vindo, {usuario}</span>
+          <span className="font-medium">Bem-vindo, {usuario}</span>
         ) : (
           <Link to="login/criar">Login / Criar</Link>
         )}

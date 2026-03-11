@@ -51,8 +51,8 @@ export const Home = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={enviarForm}>
+    <div className="flex flex-col gap-6 justify-center text-start min-w-2xl border border-amber-50">
+      <form onSubmit={enviarForm} className="mt-8">
         {formFields.map((field) => (
           <div key={field.id} className="flex flex-col items-start gap-2">
             <label htmlFor="">{field.label}:</label>

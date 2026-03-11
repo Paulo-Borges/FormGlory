@@ -32,8 +32,8 @@ export const LoginCreate = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={enviarLocal}>
+    <div className="flex flex-col gap-6 justify-center text-start min-w-2xl border border-amber-50">
+      <form onSubmit={enviarLocal} className="mt-6">
         <div>
           {formFields.map((fields) => (
             <div key={fields.id} className="flex flex-col items-start gap-2">
