@@ -6,6 +6,7 @@ import { Home } from "./Components/Home";
 import { Login } from "./Components/Login/Login";
 import Users from "./app/Users";
 import UsersDetails from "./app/UsersDetails";
+import Edit from "./app/edit";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/app/Users" element={<Users />} />
           <Route path="/app/Users/:id" element={<UsersDetails />} />
+          <Route path="/app/Edit/:id" element={<Edit />} />
           <Route path="/login/*" element={<Login />} />
         </Routes>
         <Footer />

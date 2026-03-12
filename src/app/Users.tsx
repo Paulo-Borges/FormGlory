@@ -57,16 +57,26 @@ export default function Users() {
                   <div>
                     <Link
                       to={`/app/Users/${user.id}`}
-                      className="bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600"
+                      className="bg-blue-500 me-1 text-white px-3 py-2 rounded-md hover:bg-blue-600"
                     >
                       Visualizar
                     </Link>
                   </div>
                   <div>
-                    <Link to="/">Editar </Link>
+                    <Link
+                      to={`/app/Edit/${user.id}`}
+                      className="bg-amber-300 me-1 text-white px-3 py-2 rounded-md hover:bg-amber-500"
+                    >
+                      Editar
+                    </Link>
                   </div>
                   <div>
-                    <Link to="/">Apagar</Link>
+                    <Link
+                      to={`/app/Users/${user.id}/edit`}
+                      className="bg-red-300 text-white px-3 py-2 rounded-md hover:bg-red-500"
+                    >
+                      Apagar
+                    </Link>
                   </div>
                 </td>
               </tr>

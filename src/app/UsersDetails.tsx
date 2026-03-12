@@ -11,7 +11,7 @@ interface User {
   name: string;
   email: string;
   createdAt: string;
-  updateAt: string;
+  updatedAt: string;
 }
 
 export default function UsersDetails() {
@@ -44,14 +44,14 @@ export default function UsersDetails() {
   }, [id]);
   return (
     <div className="flex flex-col p-16 w-screen bg-gray-100">
-      <h1>Membros</h1>
+      <h1 className="mb-12 font-semibold">Membros</h1>
       {error && <p className="text-red-500 mt-4">{error}</p>}
 
       {user && !error && (
         <div className="bg-white shadow-md rounded-lg p-6 max-w-100 mx-auto w-full ">
           <div className="flex flex-col items-start text-gray-700">
             <div className=" text-gray-700  ">
-              <span className="font-bold">ID:</span>
+              <span className="font-bold">ID: </span>
               {user.id}
             </div>
             <div className="text-gray-700 ">
@@ -63,12 +63,12 @@ export default function UsersDetails() {
               {user.email}
             </div>
             <div className="text-gray-700 ">
-              <span className="font-bold">createdAt: </span>
-              {user.createdAt}
+              <span className="font-bold">Criado em : </span>
+              {new Date(user.createdAt).toLocaleString()}
             </div>
             <div className="text-gray-700 ">
-              <span className="font-bold">updatedAt:</span>
-              {user.updateAt}
+              <span className="font-bold">Editado em :</span>
+              {new Date(user.updatedAt).toLocaleString()}
             </div>
           </div>
         </div>

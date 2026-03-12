@@ -124,10 +124,6 @@ export const LoginForm = () => {
   const [error, setError] = useState<string | null>(null);
   // Estado pra controle de Success
   const [success, setSuccess] = useState<string | null>(null);
-  // Estado pra campo name
-  const [name, setName] = useState<string>("");
-  // Estado pra campo email
-  const [email, setEmail] = useState<string>("");
 
   const [data, setData] = useState({
     nome: "",
@@ -156,16 +152,7 @@ export const LoginForm = () => {
   // onChange
   const valorInput = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-    // setName(e.target.value);
-    // setEmail(e.target.value);
   };
-
-  // onsubmit
-  // const sendMsg = (e) => {
-  //   e.preventDefault();
-  //   localStorage.setItem("@CEL:entrar", JSON.stringify(data));
-  //   console.log(data);
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
