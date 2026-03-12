@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import instance from "../services/api";
+import { Link } from "react-router-dom";
 
 interface User {
   id: number;
@@ -52,8 +53,21 @@ export default function Users() {
                 <td className="border border-gray-300 p-3">{user.id}</td>
                 <td className="border border-gray-300 p-3">{user.name}</td>
                 <td className="border border-gray-300 p-3">{user.email}</td>
-                <td className="border border-gray-300 p-3">
-                  Visualizar Editar Apagar
+                <td className=" flex border border-gray-300 p-3">
+                  <div>
+                    <Link
+                      to={`/app/Users/${user.id}`}
+                      className="bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600"
+                    >
+                      Visualizar
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/">Editar </Link>
+                  </div>
+                  <div>
+                    <Link to="/">Apagar</Link>
+                  </div>
                 </td>
               </tr>
             ))}

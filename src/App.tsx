@@ -5,6 +5,7 @@ import { Headers } from "./Components/Headers";
 import { Home } from "./Components/Home";
 import { Login } from "./Components/Login/Login";
 import Users from "./app/Users";
+import UsersDetails from "./app/UsersDetails";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/app/Users" element={<Users />} />
-          {/* <Route path="/app/Users/:id" element={<UsersDetails />} /> */}
+          <Route path="/app/Users/:id" element={<UsersDetails />} />
           <Route path="/login/*" element={<Login />} />
         </Routes>
         <Footer />

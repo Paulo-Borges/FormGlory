@@ -51,7 +51,7 @@ export const Home = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 justify-center text-start min-w-2xl border border-amber-50">
+    <div className="flex flex-col gap-6 justify-center text-start min-w-100 border border-amber-50">
       <form onSubmit={enviarForm} className="mt-8">
         {formFields.map((field) => (
           <div key={field.id} className="flex flex-col items-start gap-2">
