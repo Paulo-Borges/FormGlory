@@ -38,8 +38,10 @@ export default function UsersDetails() {
   // Hook pra buscar dados quando id estiver disponivel
   useEffect(() => {
     if (id) {
+      // Garantir que ID e uma string
+      const userId = Array.isArray(id) ? id[0] : id;
       // Buscar os dados da situação se o id estiver disponivel
-      fetchUserDetail(id);
+      fetchUserDetail(userId);
     }
   }, [id]);
   return (

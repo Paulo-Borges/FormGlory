@@ -72,7 +72,7 @@ export default function Users() {
                   </div>
                   <div>
                     <Link
-                      to={`/app/Users/${user.id}/edit`}
+                      to={`/app/Users/${user.id}`}
                       className="bg-red-300 text-white px-3 py-2 rounded-md hover:bg-red-500"
                     >
                       Apagar
