@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import instance from "../services/api";
 import { Link } from "react-router-dom";
+import DeleteButton from "../Components/DeleteButton";
 
 interface User {
   id: number;
@@ -11,6 +12,8 @@ interface User {
 export default function Users() {
   // Estados pra controle de erros
   const [error, setError] = useState<string | null>(null);
+  // Estados pra controle de Success
+  const [success, setSuccess] = useState<string | null>(null);
   // Estados pra armazenar os usuários
   const [users, setUsers] = useState<User[]>([]);
 
@@ -27,6 +30,11 @@ export default function Users() {
       console.log(error);
     }
   };
+
+  const handleSuccess = () => {
+    fetchUsers();
+  };
+
   //   Hook pra buscar os dados na primeira renderização
   useEffect(() => {
     fetchUsers();
@@ -37,6 +45,7 @@ export default function Users() {
       <h1 className="pb-6 font-medium text-2xl">Listar Usuários</h1>
       {/* Exibe mensagem de erro  */}
       {error && <p style={{ color: "#f00" }}>{error}</p>}
+      {success && <p style={{ color: "#1ee77c" }}>{success}</p>}
       <div className="mt-6 bg-white shadow-md rounded-lg p-6">
         <table className="w-full border-collapse">
           <thead>
@@ -53,11 +62,11 @@ export default function Users() {
                 <td className="border border-gray-300 p-3">{user.id}</td>
                 <td className="border border-gray-300 p-3">{user.name}</td>
                 <td className="border border-gray-300 p-3">{user.email}</td>
-                <td className=" flex border border-gray-300 p-3">
+                <td className=" flex items-center border border-gray-300 p-3">
                   <div>
                     <Link
                       to={`/app/Users/${user.id}`}
-                      className="bg-blue-500 me-1 text-white px-3 py-2 rounded-md hover:bg-blue-600"
+                      className="bg-blue-500 me-1 text-white px-2 py-1 rounded-md hover:bg-blue-600"
                     >
                       Visualizar
                     </Link>
@@ -65,19 +74,18 @@ export default function Users() {
                   <div>
                     <Link
                       to={`/app/Edit/${user.id}`}
-                      className="bg-amber-300 me-1 text-white px-3 py-2 rounded-md hover:bg-amber-500"
+                      className="bg-amber-300 me-1 text-white px-2 py-1 rounded-md hover:bg-amber-500"
                     >
                       Editar
                     </Link>
                   </div>
-                  <div>
-                    <Link
-                      to={`/app/Users/${user.id}`}
-                      className="bg-red-300 text-white px-3 py-2 rounded-md hover:bg-red-500"
-                    >
-                      Apagar
-                    </Link>
-                  </div>
+                  <DeleteButton
+                    id={String(user.id)}
+                    route="users"
+                    onSuccess={handleSuccess}
+                    setError={setError}
+                    setSuccess={setSuccess}
+                  />
                 </td>
               </tr>
             ))}
